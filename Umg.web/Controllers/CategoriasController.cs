@@ -28,14 +28,14 @@ namespace Umg.web.Controllers
         }
 
         //get api/categoria/2
-        [HttpGet ("{idcategoria}")]
+        [HttpGet("{idcategoria}")]
 
         public async Task<ActionResult<Categoria>> GetCategoria(int id)
         {
             var categoria = await _context.Categorias.FindAsync(id);
 
-            
-            if(categoria == null)
+
+            if (categoria == null)
             {
                 return NotFound();
             }
@@ -44,9 +44,9 @@ namespace Umg.web.Controllers
         //put api/categorias/2
         [HttpGet("idcategoria")]
 
-        public async Task<IActionResult>PutCategoria(int id, Categoria categoria)
+        public async Task<IActionResult> PutCategoria(int id, Categoria categoria)
         {
-            if(id != categoria.idcategoria)
+            if (id != categoria.idcategoria)
             {
                 return BadRequest();
             }
@@ -70,6 +70,17 @@ namespace Umg.web.Controllers
             }
             return NoContent();
         }
+        
+        //post api/categoria
+        [HttpPost]
+        public async Task<ActionResult<Categoria>> PostCategoria(Categoria categoria)
+        {
+            _context.Categorias.Add(categoria);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetCategoria", new { id = categoria.idcategoria }, categoria);
+        }
+
         private bool CategoriaExists(int id)
         {
             return _context.Categorias.Any(e => e.idcategoria == id);
