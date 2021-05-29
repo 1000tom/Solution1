@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Umg.Entidades.Usuario
 {
-    class Usuario
+    public class Usuario
     {
         public int idUsuario { get; set; }
         public int idRol { get; set; }

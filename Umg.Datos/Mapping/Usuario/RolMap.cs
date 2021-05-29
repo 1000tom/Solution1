@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Umg.Entidades.Rol;
 
-namespace Umg.Datos.Mapping.Almacen
+namespace Umg.Datos.Mapping.Rol
 {
     public class RolMap : IEntityTypeConfiguration<Rol>
     {

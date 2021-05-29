@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using Umg.Entidades.Persona;
 
-namespace Umg.Datos.Mapping.Almacen
+namespace Umg.Datos.Mapping.Persona
 {
     public class PersonaMap : IEntityTypeConfiguration<Persona>
     {
