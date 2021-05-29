@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Umg.Entidades.Articulo;
+using Umg.Entidades.Almacen;
 
 namespace Umg.Datos.Mapping.Almacen
 {
-   public class ArticuloMap : IEntityTypeConfiguration<Articulo>
+    public class ArticuloMap : IEntityTypeConfiguration<Articulo>
     {
 
         public void Configure(EntityTypeBuilder<Articulo> builder)
@@ -27,6 +24,8 @@ namespace Umg.Datos.Mapping.Almacen
             builder.Property(c => c.condicion)
                .HasMaxLength(50);
 
+            builder.HasOne(p => p.Categorias)
+                .WithOne();
         }
     }
 }

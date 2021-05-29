@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Umg.Entidades.Usuario;
+using Umg.Entidades.Usuarios;
 
-namespace Umg.Datos.Mapping.Usuario
+namespace Umg.Datos.Mapping.Usuarios
 {
     public class UsuarioMap : IEntityTypeConfiguration<Usuario>
     {
@@ -13,31 +10,36 @@ namespace Umg.Datos.Mapping.Usuario
         {
             builder.ToTable("usuario")
               .HasKey(c => c.idUsuario);
-            builder.Property(c => PrimerNombre )
+            builder.Property(c => c.PrimerNombre )
                 .HasMaxLength(20);
-            builder.Property(c => SegundoNombre)
+            builder.Property(c => c.SegundoNombre)
                 .HasMaxLength(20);
-            builder.Property(c => PrimerApellido)
+            builder.Property(c => c.PrimerApellido)
                 .HasMaxLength(20);
-            builder.Property(c => SegundoApellido)
+            builder.Property(c => c.SegundoApellido)
                 .HasMaxLength(20);
-            builder.Property(c => Direccion)
+            builder.Property(c => c.direccion)
                 .HasMaxLength(20);
-            builder.Property(c => Telefono)
+            builder.Property(c => c.telefono)
                 .HasMaxLength(20);
-            builder.Property(c => email)
+            builder.Property(c => c.email)
                 .HasMaxLength(20);
-            builder.Property(c => passwordHash)
+            builder.Property(c => c.passwordHash)
                 .HasMaxLength(20);
-            builder.Property(c => passwordSal)
+            builder.Property(c => c.passwordSal)
                 .HasMaxLength(20);
-            builder.Property(c => condicion)
+            builder.Property(c => c.condicion)
                 .HasMaxLength(20);
+
+            builder.HasOne(p => p.Roles)
+                .WithOne();
+            builder.HasOne(p => p.Documentos)
+                .WithOne();
 
         }
 
             
-        }
-    
     }
+    
+}
 

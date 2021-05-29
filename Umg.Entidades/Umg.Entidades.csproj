@@ -10,9 +10,4 @@
     <None Remove="bin\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Usuario\" />
-    <Folder Include="Ventas\" />
-  </ItemGroup>
-
 </Project>

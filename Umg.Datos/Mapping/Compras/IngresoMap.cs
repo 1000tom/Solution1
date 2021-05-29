@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Umg.Entidades.Ingreso;
+using Umg.Entidades.Compras;
 
-namespace Umg.Datos.Mapping.Almacen
+namespace Umg.Datos.Mapping.Compras
 {
-   public  class IngresoMap : IEntityTypeConfiguration<Ingreso>
+    public  class IngresoMap : IEntityTypeConfiguration<Ingreso>
     {
         public void Configure(EntityTypeBuilder<Ingreso> builder)
         {
@@ -19,6 +16,15 @@ namespace Umg.Datos.Mapping.Almacen
                 .HasMaxLength(50);
             builder.Property(c => c.total)
                .HasMaxLength(50);
+
+            builder.HasOne(p => p.Personas)
+                .WithOne();
+            builder.HasOne(p => p.Usuarios)
+                .WithOne();
+            builder.HasOne(p => p.Comprobantes)
+                .WithOne();
+            builder.HasOne(p => p.EstadosIngresos)
+                .WithOne();
         }
     }
 }

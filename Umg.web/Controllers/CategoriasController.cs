@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Umg.Datos;
-using Umg.Entidades.Alamacen;
+using Umg.Entidades.Almacen;
 
 namespace Umg.web.Controllers
 {

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Umg.Entidades.Rol
+namespace Umg.Entidades.Usuarios
 {
     public class Rol
     {
@@ -12,10 +9,6 @@ namespace Umg.Entidades.Rol
         public string nombre { get; set; }
         [StringLength(256, MinimumLength = 150, ErrorMessage = "La descripcion debe tener un maximo de 20 carácteres")]
         public string descripcion { get; set; }
-        public int condicion { get; set; }
-
-
-
-
+        public bool condicion { get; set; }
     }
 }

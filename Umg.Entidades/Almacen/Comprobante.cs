@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace Umg.Entidades.Comprobante
+namespace Umg.Entidades.Almacen
 {
     public class Comprobante
     {
         public int idComprobante { get; set; }
-        public int idTipoComprobante { get; set; }
+        
         public string serie { get; set; }
         public string numero { get; set; }
 
-
-
-
+        public List<TipoComprobante> TipoComprobantes { get; set; }
     }
 }

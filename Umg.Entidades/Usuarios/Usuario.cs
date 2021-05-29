@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Umg.Entidades.Almacen;
 
-namespace Umg.Entidades.Usuario
+namespace Umg.Entidades.Usuarios
 {
     public class Usuario
     {
@@ -23,8 +22,11 @@ namespace Umg.Entidades.Usuario
         public string telefono { get; set; }
         [StringLength(50, MinimumLength = 20, ErrorMessage = "El email debe tener un maximo de 20 carácteres")]
         public string email { get; set; }
-        public bool passwordHash { get; set; }
-        public bool passwordSal { get; set; }
-        public byte condicion { get; set; }
+        public byte passwordHash { get; set; }
+        public byte passwordSal { get; set; }
+        public bool condicion { get; set; }
+
+        public List<Rol> Roles { get; set; }
+        public List<Documento> Documentos { get; set; }
     }
 }

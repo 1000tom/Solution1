@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Umg.Entidades.DetalleVenta;
+using Umg.Entidades.Ventas;
 
-namespace Umg.Datos.Mapping.Almacen
+namespace Umg.Datos.Mapping.Ventas
 {
-   public  class DetalleVentaMap : IEntityTypeConfiguration<DetalleVenta>
+    public  class DetalleVentaMap : IEntityTypeConfiguration<DetalleVenta>
     {
         public void Configure(EntityTypeBuilder<DetalleVenta> builder)
         {
@@ -19,6 +16,11 @@ namespace Umg.Datos.Mapping.Almacen
                 .HasMaxLength(50);
             builder.Property(c => c.descuento)
                .HasMaxLength(50);
+
+            builder.HasOne(p => p.Ventas)
+                .WithOne();
+            builder.HasOne(p => p.Articulos)
+                .WithOne();
         }
     }
 }

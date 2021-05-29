@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Umg.Entidades.TipoComprobante
+namespace Umg.Entidades.Almacen
 {
     public class TipoComprobante
     {

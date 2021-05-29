@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Umg.Entidades.Rol;
+using Umg.Entidades.Usuarios;
 
-namespace Umg.Datos.Mapping.Rol
+namespace Umg.Datos.Mapping.Usuarios
 {
     public class RolMap : IEntityTypeConfiguration<Rol>
     {

@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Umg.Entidades.EstadoIngreso;
+using Umg.Entidades.Compras;
 
-namespace Umg.Datos.Mapping.Almacen
+namespace Umg.Datos.Mapping.Compras
 {
     public class EstadoIngresoMap : IEntityTypeConfiguration<EstadoIngreso>
     {

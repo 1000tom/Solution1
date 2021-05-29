@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Umg.Entidades.Documento;
+using Umg.Entidades.Almacen;
 
 namespace Umg.Datos.Mapping.Almacen
 {
@@ -15,7 +12,10 @@ namespace Umg.Datos.Mapping.Almacen
                 .HasKey(c => c.idDocumento);
             builder.Property(c => c.numero)
                 .HasMaxLength(20);
-          
+
+            builder.HasOne(p => p.TipoDocumento)
+                .WithOne();
+
         }
     }
 }

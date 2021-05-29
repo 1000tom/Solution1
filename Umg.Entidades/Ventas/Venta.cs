@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using Umg.Entidades.Almacen;
+using Umg.Entidades.Usuarios;
 
 namespace Umg.Entidades.Ventas
 {
@@ -12,6 +12,11 @@ namespace Umg.Entidades.Ventas
         public int idComprobante { get; set; }
         public int fechaHora { get; set; }
         public int idEstadoVenta { get; set; }
+
+        public List<Persona> Personas { get; set; }
+        public List<Usuario> Usuarios { get; set; }
+        public List<Comprobante> Comprobantes { get; set; }
+        public List<EstadoVenta> EstadosVenta { get; set; }
 
     }
 }

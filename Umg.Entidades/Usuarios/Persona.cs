@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Umg.Entidades.Almacen;
 
-namespace Umg.Entidades.Persona
+namespace Umg.Entidades.Usuarios
 {
     public class Persona
     {
         public int idPersona { get; set; }
-        public int idTipoPersona { get; set; }
+        
         [StringLength(20, MinimumLength = 10, ErrorMessage = "El Nombre debe tener un maximo de 20 carácteres")]
         public string primerNombre { get; set; }
         [StringLength(20, MinimumLength = 10, ErrorMessage = "El Nombre debe tener un maximo de 20 carácteres")]
@@ -17,14 +16,14 @@ namespace Umg.Entidades.Persona
         public string primerApellido { get; set; }
         [StringLength(20, MinimumLength = 10, ErrorMessage = "El Apellido debe tener un maximo de 20 carácteres")]
         public string segundoApellido { get; set; }
-        public int idDocumento { get; set; }
+       
         public string direccion { get; set; }
         public string telefono { get; set; }
         public string email { get; set; }
 
+        public List<TipoPersona> TipoPersonas { get; set; }
 
-
-
+        public List<Documento> Documentos { get; set; }
 
 
 

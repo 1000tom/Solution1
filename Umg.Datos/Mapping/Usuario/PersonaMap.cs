@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Umg.Entidades.Persona;
+using Umg.Entidades.Usuarios;
 
-namespace Umg.Datos.Mapping.Persona
+namespace Umg.Datos.Mapping.Usuarios
 {
     public class PersonaMap : IEntityTypeConfiguration<Persona>
     {
@@ -27,6 +27,11 @@ namespace Umg.Datos.Mapping.Persona
                 .HasMaxLength(20);
             builder.Property(c => c.email)
                 .HasMaxLength(50);
+
+            builder.HasOne(p => p.TipoPersonas)
+                .WithOne();
+            builder.HasOne(p => p.Documentos)
+                .WithOne();
         }
     }
 }
